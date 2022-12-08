@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/diszinventory
+    username: diszinventory
+    password: diszinventory
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+logging:
+  level:
+    root: DEBUG
+    org:
+      hibernate:
+        type:
+          descriptor:
+            sql: TRACE
