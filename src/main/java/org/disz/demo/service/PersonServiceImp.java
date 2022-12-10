@@ -102,7 +102,7 @@ public class PersonServiceImp implements PersonService{
     @Override
     public void setAsAdmin(PersonDto personDto, boolean admin) {
         Person person = toEntity(personDto);
-        person.setAdmin(admin);
+        person.setAdmin(true);
         personRepository.save(person);
     }
 
