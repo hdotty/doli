@@ -56,4 +56,10 @@ public class PersonController {
     @GetMapping("/persons")
     public List<BorrowDto> personsBooks(final @RequestBody PersonDto personDto){return personService.personsBooks(personDto);}
 
+    @RolesAllowed("ROLE_ADMIN")
+    @PostMapping("/person/admin")
+    public void setAsAdmin(final @RequestBody PersonDto personDto, boolean admin) {
+        personService.setAsAdmin(personDto, admin);
+    }
+
 }

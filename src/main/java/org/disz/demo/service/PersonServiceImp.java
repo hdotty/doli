@@ -99,6 +99,12 @@ public class PersonServiceImp implements PersonService{
         return toDto(person);
     }
 
+    @Override
+    public void setAsAdmin(PersonDto personDto, boolean admin) {
+        Person person = toEntity(personDto);
+        person.setAdmin(admin);
+        personRepository.save(person);
+    }
 
     private Person toEntity(PersonDto personDto) {
         final String encodedPassword = passwordEncoder.encode(personDto.getPassword());

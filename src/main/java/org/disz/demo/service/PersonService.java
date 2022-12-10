@@ -18,6 +18,7 @@ public interface PersonService {
     List<PersonDto> findPersonByFirstNameOrLastNameOrEmail(String query);
     void changePsw(PersonDto personDto, String oldPsw, String newPsw);
     List<BorrowDto> personsBooks(PersonDto personDto);
+    void setAsAdmin(PersonDto person, boolean admin);
 
     PersonDto getLoggedInPerson();
 }
